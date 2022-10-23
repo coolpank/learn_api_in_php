@@ -13,7 +13,11 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //Response to be return as a str
 
 $response = curl_exec($ch); //execute the request
 
+$status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE); //Returns status code
+
 curl_close($ch);
+
+echo $status_code, "\n";
 
 echo $response, "\n";
 ?>
